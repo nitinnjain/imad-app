@@ -1,3 +1,5 @@
 console.log('Loaded!');
 
-alert('Hi, I\'m javascript');
+ var element = getElementById('main-text');
+ 
+ element.text('New Value by text');
