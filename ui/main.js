@@ -5,6 +5,12 @@ console.log('Loaded!');
  element.innerHTML = 'New Value by text';
  
  var img = document.getElementById('madi');
+ 
+ marginLeft = 0;
+ function moveRight () {
+     marginLeft = marginLeft + 1;
+     img.style.marginLeft = marginLeft + 'px';
+ }
  img.onclick = function () {
-    img.style.marginLeft = '100px';  
+    var interval = setinterval(moveRight, 10);
  };
