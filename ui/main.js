@@ -5,4 +5,6 @@ console.log('Loaded!');
  element.innerHTML = 'New Value by text';
  
  var img = document.getElementById('madi');
- img.style.margin-left = '100px';
+ img.onclick = function () {
+    img.style.marginLeft = '100px';  
+ };
