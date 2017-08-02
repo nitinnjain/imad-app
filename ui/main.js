@@ -1,6 +1,6 @@
 console.log('Loaded!');
-
- var element = document.getElementById('main-text');
+$(document).ready(function () {
+     var element = document.getElementById('main-text');
  
  element.innerHTML = 'New Value by text';
  
@@ -14,3 +14,4 @@ console.log('Loaded!');
  img.onclick = function () {
     var interval = setInterval(moveRight, 10);
  };
+});
