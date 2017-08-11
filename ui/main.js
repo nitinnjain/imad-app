@@ -53,7 +53,7 @@ $(document).ready(function () {
         
         var name = $('#name').val();
         //Make the request
-        request.open('GET', 'http://njain071.imad.hasura-app.io/submit-name?name' + name, true);
+        request.open('GET', 'http://njain071.imad.hasura-app.io/submit-name?name=' + name, true);
         request.send(null);
     });
 });
