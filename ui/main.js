@@ -27,7 +27,6 @@ $(document).ready(function () {
     
     $('#submit_btn').click(function () {
         
-        var name = $('#name').val();
         //Create a request object
         var request = new XMLHttpRequest();
     
@@ -50,7 +49,9 @@ $(document).ready(function () {
             }
             //Not done yet
         };
-    
+        
+        var name = $('#name').val();
+        alert(name);
         //Make the request
         request.open('GET', 'http://njain071.imad.hasura-app.io/submit-name?name' + name, true);
         request.send(null);
