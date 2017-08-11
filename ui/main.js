@@ -36,7 +36,8 @@ $(document).ready(function () {
             if(request.readyState === XMLHttpRequest.DONE) {
                 //Take some action
                 if(request.status === 200) {
-                    var names = ['name 1', 'name 2', 'name 3', 'name 4'];
+                    var names = request.responseText;
+                    names = JSON.stringify(names);
                     var list ='';
             
                     for(var i = 0; i < names.length; i ++) {
