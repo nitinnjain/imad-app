@@ -37,7 +37,7 @@ $(document).ready(function () {
                 if(request.status === 200) {
                     alert(name);
                     var names = request.responseText;
-                    names = JSON.stringify(names);
+                    names = JSON.parse(names);
                     alert(names);
                     var list ='';
             
