@@ -26,14 +26,32 @@ button.onclick = function() {
 $(document).ready(function () {
     
     $('#submit_btn').click(function () {
-        var names = ['name 1', 'name 2', 'name 3', 'name 4'];
-        var list ='';
         
-        for(var i = 0; i < names.length; i ++) {
-            list += '<li>' + names[i] + '</li>';
-        }
-        
-        var ul = document.getElementById("nameslist");
-        ul.innerHTML = list;
+        var name = $('#name').val();
+        //Create a request object
+        var request = new XMLHttpRequest();
+    
+        //Capture response and store it in a variable
+        request.onreadystatechange = function() {
+            if(request.readyState === XMLHttpRequest.DONE) {
+                //Take some action
+                if(request.status === 200) {
+                    var names = ['name 1', 'name 2', 'name 3', 'name 4'];
+                    var list ='';
+            
+                    for(var i = 0; i < names.length; i ++) {
+                    list += '<li>' + names[i] + '</li>';
+                    }
+            
+                    var ul = document.getElementById("nameslist");
+                    ul.innerHTML = list;
+                }
+            }
+            //Not done yet
+        };
+    
+        //Make the request
+        request.open('GET', 'http://njain071.imad.hasura-app.io/submit-name/name' + name, true);
+        request.send(null);
     });
 });
