@@ -35,6 +35,7 @@ $(document).ready(function () {
             if(request.readyState === XMLHttpRequest.DONE) {
                 //Take some action
                 if(request.status === 200) {
+                    alert(name);
                     var names = request.responseText;
                     names = JSON.stringify(names);
                     var list ='';
@@ -51,7 +52,6 @@ $(document).ready(function () {
         };
         
         var name = $('#name').val();
-        alert(name);
         //Make the request
         request.open('GET', 'http://njain071.imad.hasura-app.io/submit-name?name' + name, true);
         request.send(null);
