@@ -104,12 +104,12 @@ app.get('/articles/:articleName', function (req, res) { // this is the feature o
     // This is the object of articles names which we will pass in url bar
     
     pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName + "'", function(err, result) {
-        if(err) {
-            res.status(500).send(err.toString());
-        }
-        else {
-            res.send(JSON.stringify(result.rows));
-        }
+        // if(err) {
+        //     res.status(500).send(err.toString());
+        // }
+        // else {
+        //     res.send(JSON.stringify(result.rows));
+        // }
     });
     if(err) {
         res.status(500).send(err.toString());
