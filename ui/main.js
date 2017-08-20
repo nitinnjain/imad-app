@@ -1,4 +1,4 @@
-var submit = document.getElementId('submit_btn');
+var submit = document.getElementById('submit_btn');
 
 submit.onclick = function () {
     
