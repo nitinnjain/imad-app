@@ -9,13 +9,13 @@ $(document).ready(function () {
         request.onreadystatechange = function() {
             if(request.readyState === XMLHttpRequest.DONE) {
                 //Take some action
-                if(request.status === 200) {
+                if(request.status == 200) {
                     alert('user loggedin successfully');
                 }
-                else if(request.status === 403) {
+                else if(request.status == 403) {
                     alert('username/password incorrect');
                 }
-                else if(request.status === 500) {
+                else if(request.status == 500) {
                     alert('Something unexpected happened');
                 }
             }
