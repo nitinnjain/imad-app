@@ -82,6 +82,33 @@ app.post('/create-user', function (req, res) {
     });
 });
 
+app.post('/login', function (req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    pool.query('SELECT froom "user" WHERE username = $1', [username], function (err, result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        }
+        else {
+            if(result.rows.length === 0) {
+                res.send(403).send('There is no user registered');
+            }
+            else {
+                var dbString = result.rows[0].password;
+                var salt = dbString.split('$')[2];
+                var hashedPassword = hash(password, salt);
+                if(hashedpassword === dbString) {
+                    res.send('Credentials are correct!');
+                }
+                else {
+                    res.send(403).send('username/password is invalid');
+                }
+            }
+            res.send('user created successfully: ' + username);
+        }
+    });
+});
+
 var pool = new Pool(config);
 app.get('/test-db', function (req, res) {
     pool.query('SELECT * FROM test', function (err, result) {
