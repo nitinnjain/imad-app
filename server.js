@@ -63,7 +63,7 @@ function hash(input, salt) {
 }
 
 app.get('/hash/:input', function (req, res) {
-    var salt = crypto.randomBytes(128).tostring('hex');
+    var salt = crypto.getRandomBytes(128).tostring('hex');
     var hashedString = hash(req.params.input, salt);
     res.send(hashedString);
 });
