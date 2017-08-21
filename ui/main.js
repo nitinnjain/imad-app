@@ -34,16 +34,19 @@ var resgister_btn = document.getElementById('register_btn');
 
 register_btn.onclick = function () {
     var request = new XMLHttpRequest();
-    
-    request.onreadystatechange = function () {
-        if(request.readystate === XMLHttpRequest.DONE) {
-            if(request.status === 200) {
-                register_btn.vlaue = 'Registered';
-            }
-            else if(request.status === 403 || request.status === 500) {
-                alert('There is an error occured ,please try after some time');
-            } 
-        }
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  alert('User created successfully');
+                  register_btn.value = 'Registered!';
+              } else {
+                  alert('Could not register the user');
+                  register_btn.value = 'Register';
+              }
+          }
     };
     
     var username = document.getElementById('username').value;
