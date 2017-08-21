@@ -89,7 +89,7 @@ function login_form() {
         var request = new XMLHttpRequest();
         
         request.onreadystatechange = function () {
-            if(request.readyState === XMLHttpResponse.DONE) {
+            if(request.readyState === XMLHttpRequest.DONE) {
                 if (request.status === 200) {
                 login.value = 'Sucess!';
             } else if (request.status === 403) {
