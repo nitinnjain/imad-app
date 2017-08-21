@@ -95,7 +95,7 @@ function check_login() {
                 console.log(data);
                 load_user_details(data);
             }
-            else {
+            else if(request.status === 400){
                 login_form();
             }
         }
