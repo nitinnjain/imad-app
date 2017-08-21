@@ -82,7 +82,7 @@ function login_form() {
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
         `;
-    document.getElementById('login').HTML = loginHtml;
+    document.getElementById('login').innerHTML = loginHtml;
     alert(loginHtml);
 }
 
