@@ -89,14 +89,10 @@ function check_login() {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                console.log(this.responseText);
-                if(this.responseText === 'You are not logged in') {
-                    console.log('not logged in');
-                    login_form();
-                }
-                else {
-                load_login_details(this.responseText);
-                }
+                    load_login_details(this.response);
+            }
+            else {
+                login_form();
             }
         }
     };
