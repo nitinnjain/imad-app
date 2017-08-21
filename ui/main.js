@@ -82,7 +82,6 @@ function login_form() {
                             <input type="submit" id="login_btn" value="Login"/>
                             <input type="submit" id="register_btn" value="Register"/>
     `;
-    alert(login_area);
 }
 
 function check_login() {
