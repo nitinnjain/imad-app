@@ -92,6 +92,7 @@ function check_login() {
             if (request.status === 200) {
                 alert(this.responseText);
                 if(this.responseText === 'You are not logged in') {
+                    alert('not logged in');
                     login_form();
                 }
                 else {
