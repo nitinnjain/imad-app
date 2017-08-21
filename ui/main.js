@@ -90,6 +90,7 @@ function check_login() {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
+                alert(this.responseText);
                 if(this.responseText === 'You are not logged in') {
                     login_form();
                 }
