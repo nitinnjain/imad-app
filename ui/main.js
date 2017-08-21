@@ -61,16 +61,27 @@
 //     login_btn.value = 'Logging in...';
 // };
 
-function load_articles () {}
-
 function register_user() {
     var request = new XMLHttpRequest();
     
     request.onreadystatechange = function () {
         if(request.readyState === XMLHttpRequest.DONE) {
+            var articles = document.getElementById('articles');
             if(request.status === 200) {
-                alert(this.response);
-                load_articles(this.response);
+                var content = '<ul>';
+                var articleData = JSON.parse(this.responseText);
+                for(var i = 0; i < articleData.length; i++) {
+                    content += `<li>
+                                <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
+                                (${articleData[i].date.split('T')[0]})
+                                </li>
+                    `;
+                }
+                content += '</li>';
+                articles.innerHTML = content;
+            }
+            else {
+                articles.innrHTML = 'OOPS sorry couldn\'t load the data';
             }
         }
     };
