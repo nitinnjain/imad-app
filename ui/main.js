@@ -29,7 +29,7 @@ show_articles();
 check_login();
 
 function load_user_details(username) {
-    var login_area = document.getElementById('login');
+    var login_area = document.getElementById('login_area');
     login_area.innerHTML = `
                             <h3>Hi<i>${username}</i></h3>
                             <a href="/logout">Logout</a>
