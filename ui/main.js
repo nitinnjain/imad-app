@@ -58,6 +58,21 @@
 //     register_btn.vlaue = 'Registering...';
 // };
 
+//function to display the page to login or register if not
+function login_form() {
+    
+}
+
+//function to display the details of the logged in user
+function load_login_details() {
+    var login_area = document.getElementById('login_area');
+    login_area.innerHTML = `
+                            <h3>Hi <i>${username}</i></h3>
+                            <a href="/logout">Log out</a>
+    `;
+}
+
+//function to check if the user is logged in or not
 function check_login() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
