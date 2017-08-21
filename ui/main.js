@@ -10,7 +10,8 @@ login_btn.onclick = function () {
         if(request.readyState === XMLHttpRequest.DONE) {
             //Take some action
             if(request.status == 200) {
-                alert('user loggedin successfully');
+                // alert('user loggedin successfully');
+                
             }
             else if(request.status == 403) {
                 alert('username/password incorrect');
