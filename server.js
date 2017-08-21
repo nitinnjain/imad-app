@@ -133,7 +133,7 @@ app.get('/logout', function(req, res) {
     res.send('Logged out');
 });
 
-app.get('/get-articles', function () {
+app.get('/get-articles', function (req, res) {
     pool.query('SELECT * FROM article ORDER BY date DESC', function (err, result) {
         if(err) {
             res.status(500).send(err.toString());
