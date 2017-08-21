@@ -65,7 +65,7 @@ show_articles();
 check_login();
 
 function load_user_details(username) {
-    var login_area = document.getElementById('login_area');
+    var login_area = document.getElementById('login');
     login_area.innerHTML = `
                             <h3>Hi<i>${username}</i></h3>
                             <a href="/logout">Logout</a>
@@ -73,7 +73,7 @@ function load_user_details(username) {
 }
 
 function login_form() {
-    var login_area = document.getElementById('login_area');
+    var login_area = document.getElementById('login');
     var loginHtml = `
         <h3>Login/Register to unlock awesome features</h3>
         <input type="text" id="username" placeholder="username" />
@@ -82,7 +82,7 @@ function login_form() {
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
         `;
-    document.getElementById('login_area').innerHTML = loginHtml;
+    document.getElementById('login').innerHTML = loginHtml;
     alert(loginHtml);
 }
 
