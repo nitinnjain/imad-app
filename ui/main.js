@@ -75,6 +75,7 @@ function login_form() {
 
 //function to display the details of the logged in user
 function load_login_details(username) {
+    alert(username);
     var login_area = document.getElementById('login_area');
     document.getElementById(login_area).innerHTML = `
                             <h3>Hi <i>${username}</i></h3>
@@ -89,7 +90,6 @@ function check_login() {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                alert(this.responseText);
                 load_login_details(this.responseText);
             } else {
                 login_form();
