@@ -74,7 +74,7 @@ function login_form() {
 }
 
 //function to display the details of the logged in user
-function load_login_details() {
+function load_login_details(username) {
     var login_area = document.getElementById('login_area');
     document.getElementById(login_area).innerHTML = `
                             <h3>Hi <i>${username}</i></h3>
