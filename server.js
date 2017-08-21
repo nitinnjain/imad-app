@@ -22,6 +22,8 @@ app.use(session({
     cookie: {maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
+var pool = new Pool(config);
+
 function createTemplate(data) {
     
     var title = data.title;
@@ -131,7 +133,17 @@ app.get('/logout', function(req, res) {
     res.send('Logged out');
 });
 
-var pool = new Pool(config);
+app.get('/getarticles', function () {
+    pool.query('SELECT * FROM article', function (err, result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        }
+        else {
+            res.send(JSON.stringify(result.rows));
+        }
+    });
+});
+
 app.get('/test-db', function (req, res) {
     pool.query('SELECT * FROM test', function (err, result) {
         if(err) {
