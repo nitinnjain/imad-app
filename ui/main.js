@@ -61,9 +61,36 @@
 //     login_btn.value = 'Logging in...';
 // };
 
-register_user();
+show_articles();
+check_login();
 
-function register_user() {
+function load_user_details(username) {
+    var login_area = document.getElementById('login_area');
+    login_area.innerHTML = `
+                            <h3>Hi<i>${username}</i></h3>
+                            <a href="/logout">Logout</a>
+    `;
+}
+
+function login_form() {}
+
+function check_login() {
+    var request =  new XMLHttpRequest();
+    
+    request.onreadystatechange = function () {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            if(request.status === 200) {
+                var data = this.responseText;
+                load_user_details(data);
+            }
+            else {
+                login_form();
+            }
+        }
+    };
+}
+
+function show_articles() {
     var request = new XMLHttpRequest();
     
     request.onreadystatechange = function () {
@@ -75,7 +102,7 @@ function register_user() {
                 for(var i = 0; i < articleData.length; i++) {
                     content += `<li>
                                 <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                                (${articleData[i].date.split('T')[0]})
+                                (${articleData[i].date})
                                 </li>
                     `;
                 }
