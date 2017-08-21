@@ -73,7 +73,7 @@ function load_user_details(username) {
 }
 
 function login_form() {
-    var login_area = document.getElementById('login');
+    var login_area = document.getElementById('login_area');
     var loginHtml = `
         <h3>Login/Register to unlock awesome features</h3>
         <input type="text" id="username" placeholder="username" />
@@ -82,7 +82,7 @@ function login_form() {
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
         `;
-    document.getElementById('login').innerHTML = loginHtml;
+    login_area.innerHTML = loginHtml;
     console.log(loginHtml);
 }
 
@@ -122,7 +122,7 @@ function show_articles() {
                                 </li>
                     `;
                 }
-                content += '</li>';
+                content += '</li></ul>';
                 articles.innerHTML = content;
             }
             else {
