@@ -73,16 +73,16 @@ function load_user_details(username) {
 }
 
 function login_form() {
-    console.log('working login_form');
-    // var login_area = document.getElementById('login_area');
-    // login_area.innerHTML = `
-    //                         <h3>Login/Register to unlock awesome features</h3>
-    //                         <input type="text" id="username" placeholder="Username"/>
-    //                         <input type="password" id="password" placeholder="Password"/>
-    //                         <br/><br/>
-    //                         <input type="submit" id="login_btn" value="Login"/>
-    //                         <input type="submit" id="register_btn" value="Register"/>
-    // `;
+    var login_area = document.getElementById('login_area');
+    login_area.innerHTML = `
+                            <h3>Login/Register to unlock awesome features</h3>
+                            <input type="text" id="username" placeholder="Username"/>
+                            <input type="password" id="password" placeholder="Password"/>
+                            <br/><br/>
+                            <input type="submit" id="login_btn" value="Login"/>
+                            <input type="submit" id="register_btn" value="Register"/>
+    `;
+    console.log(login_area);
 }
 
 function check_login() {
@@ -95,7 +95,7 @@ function check_login() {
                 console.log(data);
                 load_user_details(data);
             }
-            else if(request.status === 400){
+            else {
                 login_form();
             }
         }
