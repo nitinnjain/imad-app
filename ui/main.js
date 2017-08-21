@@ -97,7 +97,7 @@ function check_login() {
         }
     };
     
-    request.open('GET', 'http://njain.imad.hasura-app.io/check-login', true);
+    request.open('GET', '/check-login', true);
     request.send(null);
 }
 //the first thing to do is check if the user is loggedin or not
