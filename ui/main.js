@@ -61,6 +61,8 @@
 //     login_btn.value = 'Logging in...';
 // };
 
+register_user();
+
 function register_user() {
     var request = new XMLHttpRequest();
     
@@ -89,5 +91,3 @@ function register_user() {
     request.open('GET', 'http://njain071.imad.hasura-app.io/get-articles', true);
     request.send();
 }
-
-register_user();
