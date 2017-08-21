@@ -25,9 +25,12 @@
 //     register_btn.vlaue = 'Registering...';
 // };
 
+//function which is being called very firstly to show the artivcle
 show_articles();
+//function which is being called very firstly to check if the user is logged in or not
 check_login();
 
+//function to load the user data and link to logout
 function load_user_details(username) {
     var login_area = document.getElementById('login_area');
     login_area.innerHTML = `
@@ -36,6 +39,7 @@ function load_user_details(username) {
     `;
 }
 
+//function to provide the user with a login page to either login or register
 function login_form() {
     var login_area = document.getElementById('login_area');
     var loginHtml = `
@@ -77,8 +81,35 @@ function login_form() {
         request.send(JSON.stringify({username: username, password: password}));
         login.value = 'Logging in...';
     };
+    
+    var register = document.getElementById('register_btn');
+    register.onclick = function () {
+        var request = new XMLHttpRequest();
+        
+        request.onreadystatechange = function () {
+            if(request.readyState === XMLHttpRequest.DONE) {
+                if(request.status === 200) {
+                    alert('User created successfully');
+                    register_btn.value = 'Registered!';
+                } 
+                else {
+                    alert('Could not register the user');
+                    register_btn.value = 'Register';
+                }
+            }
+        };
+        
+        var username = document.getElementById('username');
+        var password = document.getElementById('password');
+        
+        request.open('POST', 'http://njain01.imad.hasura-app.io', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));
+        register.value = 'Registering...';
+    };
 }
 
+//function to check if the user is logged in or not
 function check_login() {
     var request =  new XMLHttpRequest();
     
@@ -99,6 +130,7 @@ function check_login() {
     request.send(null);
 }
 
+//function to show the articles list on the main page
 function show_articles() {
     var request = new XMLHttpRequest();
     
