@@ -92,6 +92,7 @@ function check_login() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 var data = this.responseText;
+                console.log(data);
                 load_user_details(data);
             }
             else {
