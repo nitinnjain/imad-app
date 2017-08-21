@@ -74,6 +74,9 @@ function register_user() {
             }
         }
     };
+    
+    request.open('GET', 'http://njain071.imad.hasura-app.io', true);
+    request.send(null);
 }
 
 register_user();
