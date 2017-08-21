@@ -75,3 +75,5 @@ function register_user() {
         }
     };
 }
+
+register_user();
