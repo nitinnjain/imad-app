@@ -83,6 +83,35 @@ function login_form() {
         <input type="submit" id="register_btn" value="Register" />
         `;
     login_area.innerHTML = loginHtml;
+    
+    var login = document.getElementById('login_btn');
+    login.onclick = function () {
+        var request = new XMLHttpRequest();
+        
+        request.onreadystatechange = function () {
+            if(request.readyState === XMLHttpResponse.DONE) {
+                if (request.status === 200) {
+                login.value = 'Sucess!';
+            } else if (request.status === 403) {
+                login.value = 'Invalid credentials. Try again?';
+            } else if (request.status === 500) {
+                alert('Something went wrong on the server');
+                login.value = 'Login';
+            } else {
+                alert('Something went wrong on the server');
+                login.value = 'Login';
+            }
+            }
+        };
+        
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        
+        request.open('POST', 'http://njain071.imad.hasura-app.io/login', true);
+        request.setReasponseHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));
+        login.value = 'Logging in...';
+    };
 }
 
 function check_login() {
