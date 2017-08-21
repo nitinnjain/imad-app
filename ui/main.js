@@ -87,6 +87,7 @@ function check_login() {
     // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
+        alert('working')
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 load_login_details(this.responseText);
