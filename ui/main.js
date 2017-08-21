@@ -73,6 +73,7 @@ function load_user_details(username) {
 }
 
 function login_form() {
+    alert('working login_form');
     var login_area = document.getElementById('login_area');
     login_area.innerHTML = `
                             <h3>Login/Register to unlock awesome features</h3>
