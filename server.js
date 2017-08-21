@@ -134,7 +134,7 @@ app.get('/logout', function(req, res) {
 });
 
 app.get('/get-articles', function () {
-    pool.query('SELECT * FROM article', function (err, result) {
+    pool.query('SELECT * FROM article ORDER BY date DESC', function (err, result) {
         if(err) {
             res.status(500).send(err.toString());
         }
