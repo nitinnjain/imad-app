@@ -122,7 +122,7 @@ app.get('/check-login', function(req, res) {
         res.send('You are logged in ' + req.session.auth.userId.toString());
     }
     else {
-        res.send(400).send('You are not logged in');
+        res.send(400);
     }
 });
 
