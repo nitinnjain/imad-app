@@ -89,10 +89,10 @@ function check_login() {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                    load_login_details(this.response);
+                    // load_login_details(this.response);
             }
             else {
-                login_form();
+                // login_form();
             }
         }
     };
