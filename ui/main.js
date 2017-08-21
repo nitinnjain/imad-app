@@ -108,7 +108,7 @@ function login_form() {
         var password = document.getElementById('password').value;
         
         request.open('POST', 'http://njain071.imad.hasura-app.io/login', true);
-        request.setReasponseHeader('Content-Type', 'application/json');
+        request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));
         login.value = 'Logging in...';
     };
