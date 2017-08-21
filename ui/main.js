@@ -1,6 +1,6 @@
-var submit = document.getElementById('login_btn');
+var login_btn = document.getElementById('login_btn');
 
-submit.onclick = function () {
+login_btn.onclick = function () {
     
     //Create a request object
     var request = new XMLHttpRequest();
@@ -25,9 +25,30 @@ submit.onclick = function () {
     //Make the request
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    console.log(username);
-    console.log(password);
     request.open('POST', 'http://njain071.imad.hasura-app.io/login', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
 };
+
+var resgister_btn = document.getElementById('register_btn');
+
+register_btn.onclick = function () {
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function () {
+        if(request.readystate === XMLHttpRequest.DONE) {
+            if(request.status === 200) {
+                alert('User registered');
+            }
+            else if(request.status === 403 || request.status === 500) {
+                alert('There is an error occured ,please try after some time');
+            } 
+        }
+    };
+    
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    request.open('POST', 'http://njain071.imad.hasura-app.io/create-user', true);
+    request.send(JSON.stringify({username: username, password: password}));
+};
+
