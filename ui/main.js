@@ -89,7 +89,7 @@ function check_login() {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                alert('working here');
+                alert(this.responseText);
                 load_login_details(this.responseText);
             } else {
                 login_form();
