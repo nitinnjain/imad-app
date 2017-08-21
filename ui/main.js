@@ -60,7 +60,10 @@
 
 //function to display the page to login or register if not
 function login_form() {
-    
+    var login_area = document.getElementById('login_area');
+    login_area.innerHTML = `
+                            <h3>Login/Register to unlock awesome features</h3>
+    `;
 }
 
 //function to display the details of the logged in user
