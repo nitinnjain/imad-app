@@ -72,7 +72,9 @@ function load_user_details(username) {
     `;
 }
 
-function login_form() {}
+function login_form() {
+    alert('login_form aa rha h');
+}
 
 function check_login() {
     var request =  new XMLHttpRequest();
