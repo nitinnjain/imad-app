@@ -83,7 +83,6 @@ function login_form() {
         <input type="submit" id="register_btn" value="Register" />
         `;
     login_area.innerHTML = loginHtml;
-    console.log(loginHtml);
 }
 
 function check_login() {
