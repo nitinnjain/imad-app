@@ -38,7 +38,7 @@ register_btn.onclick = function () {
     request.onreadystatechange = function () {
         if(request.readystate === XMLHttpRequest.DONE) {
             if(request.status === 200) {
-                alert('User registered');
+                register_btn.vlaue = 'Registered';
             }
             else if(request.status === 403 || request.status === 500) {
                 alert('There is an error occured ,please try after some time');
@@ -51,5 +51,6 @@ register_btn.onclick = function () {
     request.open('POST', 'http://njain071.imad.hasura-app.io/create-user', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
+    register_btn.vlaue = 'Registering...';
 };
 
