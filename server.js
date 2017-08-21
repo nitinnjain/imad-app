@@ -104,7 +104,6 @@ app.post('/login', function (req, res) {
                 var hashedPassword = hash(password, salt);
                 if(hashedPassword === dbString) {
                     
-                    // var userId = result.rows[0].id;
                     //set the session
                     req.session.auth = {userId: result.rows[0].id};
                     
