@@ -7,8 +7,20 @@ load_comments();
 
 //function to load all the comments
 function load_comments() {
-    var comments_load_area = document.getElementById('comments');
-    // comments_load_area.innerHTML = ;
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            if(request.status === 200) {
+                //load the comments
+            }
+            else {
+                comments.innerHTML('Sorry, could not load the comments...');
+            }
+        }
+    };
+    
+    request.open('GET', 'http://njain071.imad.hasura-app.io/get-comments', true);
+    request.send(null);
 }
 
 //if the user is loggedd in then show the dialog box to add a coment
