@@ -179,14 +179,15 @@ app.get('/logout', function(req, res) {
 // });
 
 app.get('/submit-comment/:articleName', function (req, res) {
-    pool.query('INSERT INTO comment (comment) value($1)', [req.body.comment], function(err, result) {
-        if(err) {
-            res.status(500).send(err.toString());
-        }
-        else {
-            res.status(200).send('comment submitted successfully');
-        }
-    });
+    // pool.query('INSERT INTO comment (comment) value($1)', [req.body.comment], function(err, result) {
+    //     if(err) {
+    //         res.status(500).send(err.toString());
+    //     }
+    //     else {
+    //         res.status(200).send('comment submitted successfully');
+    //     }
+    // });
+    res.send('getting the request from user');
 });
 
 app.get('/get-articles', function (req, res) {
