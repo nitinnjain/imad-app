@@ -97,7 +97,7 @@ function login_form() {
                 } 
                 else {
                     // alert('Could not register the user');
-                    alert(this.responseText);
+                    console.log(this.responseText);
                     register_btn.value = 'Register';
                 }
             }
