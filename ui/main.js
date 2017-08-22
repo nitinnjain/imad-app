@@ -127,7 +127,7 @@ function check_login() {
     };
     
     request.open('GET', 'http://njain071.imad.hasura-app.io/check-login', true);
-    request.send(null);
+    request.send();
 }
 
 //function to show the articles list on the main page
