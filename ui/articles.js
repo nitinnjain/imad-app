@@ -11,6 +11,7 @@ function load_comments_box () {
                         <textarea id="comments_area" placeholder="Type a comment..." rows="5" cols="100"></textarea>
                         <hr/>
                         <input type="submit" value="Submit" id="submit_comment_btn" />
+                        <hr/>
     `;
     comments_box.innerHTML = add_comments;
 }
