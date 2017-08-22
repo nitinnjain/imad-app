@@ -25,6 +25,7 @@ function load_comments_box () {
             if(request.readyState === XMLHttpRequest.DONE) {
                 if(request.status === 200) {
                     // load_comments();
+                    alert(JSON.stringify(this.responseText));
                 }
                 else {
                     alert('There is some error, please try again after some time');
@@ -34,9 +35,12 @@ function load_comments_box () {
         
         var comment = document.getElementById('comments_area').value;
         
-        request.open('POST', 'http://njain071.imad.hasura-app.io/submit-comment/' + article_name, true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({comment: comment}));
+        // request.open('POST', 'http://njain071.imad.hasura-app.io/submit-comment/' + article_name, true);
+        // request.setRequestHeader('Content-Type', 'application/json');
+        // request.send(JSON.stringify({comment: comment}));
+        
+        request.open('GET', 'http://njain071.imad.hasura-app.io/submit-comment/article-one', true);
+        request.send(null);
     };
 }
 
