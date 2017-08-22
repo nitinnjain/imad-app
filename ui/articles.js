@@ -20,7 +20,7 @@ function load_comments() {
         }
     };
     
-    request.open('GET', 'http://njain071.imad.hasura-app.io/get-comments' + article_name, true);
+    request.open('GET', 'http://njain071.imad.hasura-app.io/get-comments/' + article_name, true);
     request.send(null);
 }
 
