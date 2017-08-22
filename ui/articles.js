@@ -4,7 +4,7 @@ alert(article_name);
 check_login();
 
 //load all the comments on the article even if the user is not logged in
-load_comments();
+// load_comments();
 
 //if the user is loggedd in then show the dialog box to add a coment
 function load_comments_box () {
