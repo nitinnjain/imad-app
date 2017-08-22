@@ -57,7 +57,7 @@ function createTemplate(data) {
                     <div id="comment_box">
                     </div>
                     <div id="comments">
-                        <h3>Comments</h3>
+                        <h4>Comments</h4>
                         <center>Loading comments...</center>
                     </div>
                 </div>
