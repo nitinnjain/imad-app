@@ -65,7 +65,6 @@ function login_form() {
             if(request.readyState === XMLHttpRequest.DONE) {
                 if(request.status === 200) {
                     alert(this.responseText);
-                    alert('User created successfully');
                     register_btn.value = 'Registered!';
                 } 
                 else {
