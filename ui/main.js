@@ -48,7 +48,7 @@ function login_form() {
         <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
-        <input type="submit" id="register_btn" value="Register" />
+        // <input type="submit" id="register_btn" value="Register" />
         `;
     login_area.innerHTML = loginHtml;
     
@@ -84,33 +84,33 @@ function login_form() {
         login.value = 'Logging in...';
     };
     
-    var register = document.getElementById('register_btn');
-    register.onclick = function () {
-        var request = new XMLHttpRequest();
+    // var register = document.getElementById('register_btn');
+    // register.onclick = function () {
+    //     var request = new XMLHttpRequest();
         
-        request.onreadystatechange = function () {
-            if(request.readyState === XMLHttpRequest.DONE) {
-                if(request.status === 200) {
-                    alert(this.responseText);
-                    alert('User created successfully');
-                    register_btn.value = 'Registered!';
-                } 
-                else {
-                    // alert('Could not register the user');
-                    console.log(this.responseText);
-                    register_btn.value = 'Register';
-                }
-            }
-        };
+    //     request.onreadystatechange = function () {
+    //         if(request.readyState === XMLHttpRequest.DONE) {
+    //             if(request.status === 200) {
+    //                 alert(this.responseText);
+    //                 alert('User created successfully');
+    //                 register_btn.value = 'Registered!';
+    //             } 
+    //             else {
+    //                 // alert('Could not register the user');
+    //                 console.log(this.responseText);
+    //                 register_btn.value = 'Register';
+    //             }
+    //         }
+    //     };
         
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
+    //     var username = document.getElementById('username').value;
+    //     var password = document.getElementById('password').value;
         
-        request.open('POST', 'http://njain01.imad.hasura-app.io/create-user', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));
-        register.value = 'Registering...';
-    };
+    //     request.open('POST', 'http://njain01.imad.hasura-app.io/create-user', true);
+    //     request.setRequestHeader('Content-Type', 'application/json');
+    //     request.send(JSON.stringify({username: username, password: password}));
+    //     register.value = 'Registering...';
+    // };
 }
 
 //function to check if the user is logged in or not
