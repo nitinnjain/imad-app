@@ -28,5 +28,5 @@ function check_login () {
     };
     
     request.open('GET', 'http://njain071.imad.hasura-app.io/check-login', true);
-    request.send();
+    request.send(null);
 }
