@@ -15,7 +15,7 @@ function load_comments() {
                 console.log(JSON.parse(this.responseText));
             }
             else {
-                comments.innerHTML('Sorry, could not load the comments...');
+                comments.innerHTML = 'Sorry, could not load the comments...';
             }
         }
     };
