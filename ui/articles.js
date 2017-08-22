@@ -22,10 +22,11 @@ function load_comments() {
                 var content = '';
                 var commentData = JSON.parse(this.responseText);
                 for(var i = 0; i < commentData.length; i++) {
-                    coment += `
+                    content += `
                             <p>${escapeHTML(commentData[i].comment)} - By ${comentData[i].usename}</p>
                 `;
                 }
+                comments.innerHTML = content;
             }
             else {
                 comments.innerHTML = 'Sorry, could not load the comments...';
