@@ -150,22 +150,23 @@ app.get('/logout', function(req, res) {
 app.get('/submit-comment/:articleName', function (req, res) {
     var articleName = req.params.articleName;
     if(req.session && req.session.auth && req.session.auth.userId) {
-        pool.query('SELECT * FROM article WHERE title = $1', [articleName], function (err, result) {
+        pool.query("SELECT * FROM article WHERE title = $1", [articleName], function (err, result) {
             if(err) {
-                res.status(500);
+                res.status(500).send(err.toString());
             }
             else {
                 if(result.rows.length === 0) {
-                    res.status(404);
+                    res.status(404).send('Article not found');
                 }
                 else {
                     var articleId = result.rows[0].id;
-                    pool.query('INSERT INTO comment (article_id, user_id, comment) VALUE($1, $2, $3)', [article_id, req.session.auth.userId, req.body.comment], function (err, result) {
+                    pool.query("INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2, $3)",
+                        [req.body.comment, articleId, req.session.auth.userId], function (err, result) {
                         if(err) {
-                            res.status(500);
+                            res.status(500).send(err.toString());
                         }
                         else {
-                            res.status(200);
+                            res.status(200).send('Comment submitted successfully.');
                         }
                     });
                 }
@@ -173,7 +174,7 @@ app.get('/submit-comment/:articleName', function (req, res) {
         });
     }
     else {
-        res.status(403);
+        res.status(403).send('only loggedin users can coomment!');
     }
 });
 
