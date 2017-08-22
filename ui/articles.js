@@ -21,7 +21,6 @@ function load_comments() {
                 //load the comments
                 var content = '';
                 var commentData = JSON.parse(this.responseText);
-                console.log(commentData);
                 for(var i = 0; i < commentData.length; i++) {
                     content += `
                             <p>${escapeHTML(commentData[i].comment)}</p>
