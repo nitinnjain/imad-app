@@ -187,7 +187,7 @@ app.get('/submit-comment/:articleName', function (req, res) {
     //         res.status(200).send('comment submitted successfully');
     //     }
     // });
-    res.send('getting the request from user');
+    res.send('getting the request from user' + req.params.articleName);
 });
 
 app.get('/get-articles', function (req, res) {
