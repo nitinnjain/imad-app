@@ -24,10 +24,9 @@ function load_comments_box () {
         request.onreadystatechange = function () {
             if(request.readyState === XMLHttpRequest.DONE) {
                 if(request.status === 200) {
-                    load_comments();
+                    // load_comments();
                 }
                 else {
-                    alert(this.response);
                     alert('There is some error, please try again after some time');
                 }
             }
