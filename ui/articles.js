@@ -12,6 +12,7 @@ function load_comments() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //load the comments
+                alert(this.responseText);
             }
             else {
                 comments.innerHTML('Sorry, could not load the comments...');
