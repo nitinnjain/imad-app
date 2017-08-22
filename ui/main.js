@@ -91,6 +91,7 @@ function login_form() {
         request.onreadystatechange = function () {
             if(request.readyState === XMLHttpRequest.DONE) {
                 if(request.status === 200) {
+                    alert(this.response);
                     alert('User created successfully');
                     register_btn.value = 'Registered!';
                 } 
