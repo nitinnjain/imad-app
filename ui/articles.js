@@ -27,6 +27,7 @@ function load_comments_box () {
                     load_comments();
                 }
                 else {
+                    alert(this.response);
                     alert('There is some error, please try again after some time');
                 }
             }
