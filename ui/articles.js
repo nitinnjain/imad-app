@@ -60,7 +60,6 @@ function load_comments_box () {
             if(request.readyState === XMLHttpRequest.DONE) {
                 if(request.status === 200) {
                     load_comments();
-                    alert(JSON.stringify(this.responseText));
                 }
                 else {
                     alert('There is some error, please try again after some time');
