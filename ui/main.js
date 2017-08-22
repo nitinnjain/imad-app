@@ -1,30 +1,3 @@
-// var resgister_btn = document.getElementById('register_btn');
-
-// register_btn.onclick = function () {
-    
-//     var request = new XMLHttpRequest();
-    
-//     request.onreadystatechange = function () {
-//         if (request.readyState === XMLHttpRequest.DONE) {
-//           // Take some action
-//           if (request.status === 200) {
-//               alert('User created successfully');
-//               register_btn.value = 'Registered!';
-//           } else {
-//               alert('Could not register the user');
-//               register_btn.value = 'Register';
-//           }
-//       }
-//     };
-    
-//     var username = document.getElementById('username').value;
-//     var password = document.getElementById('password').value;
-//     request.open('POST', 'http://njain071.imad.hasura-app.io/create-user', true);
-//     request.setRequestHeader('Content-Type', 'application/json');
-//     request.send(JSON.stringify({username: username, password: password}));
-//     register_btn.vlaue = 'Registering...';
-// };
-
 //function which is being called very firstly to show the artivcle
 show_articles();
 //function which is being called very firstly to check if the user is logged in or not
