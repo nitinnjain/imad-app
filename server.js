@@ -155,7 +155,7 @@ app.get('/submit-comment/:articleName', function (req, res) {
             }
             else {
                 if(result.rows.length === 0) {
-                    res.status(400).send('Article not found');
+                    res.status(404).send('Article not found');
                 }
                 else {
                     var articleId = result.rows[0].id;
