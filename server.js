@@ -54,13 +54,14 @@ function createTemplate(data) {
                         ${content}
                     </div>
                     <hr/>
-                    <div id="comment_box">
+                    <div id="comments_box">
                     </div>
                     <div id="comments">
                         <h4>Comments</h4>
                         <center>Loading comments...</center>
                     </div>
                 </div>
+                <script type="text/javascript" src="/ui/articles.js"></script>
             </body>
         </html>
     `;
