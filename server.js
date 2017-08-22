@@ -180,6 +180,14 @@ app.post('/submit-comment/:articleName', function (req, res) {
 
 app.get('/get-comments', function(req, res) {
    //endpoint to get all the comments 
+   pool.query('SELECT comment.*, "user".username FROM article, comment, "user" WHERE article.title = $1 AND article.id = comment.article_id AND comment.user_id = "user".id', [req.params.articleName], function (err, result) {
+       if(err) {
+           res.send(err.toString());
+       }
+       else {
+           res.send(JSON.stringify(result.rows));
+       }
+   });
 });
 
 app.get('/get-articles', function (req, res) {
