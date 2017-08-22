@@ -149,7 +149,7 @@ app.get('/logout', function(req, res) {
 
 app.get('/submit-comment/:articleName', function (req, res) {
     var articleName = req.params.articleName;
-    if(req.session && req.session.auth && req.session.auth.userId) {
+    // if(req.session && req.session.auth && req.session.auth.userId) {
         pool.query('SELECT * FROM "user" WHERE title = $1', [articleName], function (err, result) {
             if(err) {
                 res.status(500).send(err.toString());
@@ -171,10 +171,10 @@ app.get('/submit-comment/:articleName', function (req, res) {
                 }
             }
         });
-    }
-    else {
-        res.status(403).send('only loggedin users can coomment!');
-    }
+    // }
+    // else {
+    //     res.status(403).send('only loggedin users can coomment!');
+    // }
 });
 
 app.get('/get-articles', function (req, res) {
