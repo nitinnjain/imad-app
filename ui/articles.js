@@ -3,7 +3,13 @@ var article_name = window.location.pathname.split('/')[2];
 check_login();
 
 //load all the comments on the article even if the user is not logged in
-// load_comments();
+load_comments();
+
+//function to load all the comments
+function load_comments() {
+    var comments_load_area = document.getElementById('comments');
+    comments_load_area.innerHTML = `Nitin Jain`;
+}
 
 //if the user is loggedd in then show the dialog box to add a coment
 function load_comments_box () {
@@ -24,7 +30,7 @@ function load_comments_box () {
         request.onreadystatechange = function () {
             if(request.readyState === XMLHttpRequest.DONE) {
                 if(request.status === 200) {
-                    // load_comments();
+                    load_comments();
                     alert(JSON.stringify(this.responseText));
                 }
                 else {
