@@ -13,6 +13,7 @@ function load_comments() {
             if(request.status === 200) {
                 //load the comments
                 alert(this.responseText);
+                console.log(this.responseText);
             }
             else {
                 comments.innerHTML('Sorry, could not load the comments...');
