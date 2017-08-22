@@ -1,7 +1,10 @@
-//this js file is for the articles section
-
+var article_name = window.location.pathname.split('/')[2];
+alert(article_name)
 //firstly check if the user is logged in or not
 check_login();
+
+//load all the comments on the article even if the user is not logged in
+load_comments();
 
 //if the user is loggedd in then show the dialog box to add a coment
 function load_comments_box () {
@@ -14,6 +17,27 @@ function load_comments_box () {
                         <hr/>
     `;
     comments_box.innerHTML = add_comments;
+    
+    var submit_btn = document.getElementById('submit_comment_btn');
+    submit_btn.onclick = function() {
+        var request = new XMLHttpRequest();
+        
+        request.onreadystatechange = function () {
+            if(request.readyState === XMLHttpRequest.DONE) {
+                if(request.status === 200) {
+                    load_comments();
+                }
+                else {
+                    alert('There is some error, please try again after some time');
+                }
+            }
+        };
+        
+        var comment = document.getElementById('comments_area');
+        
+        request.open('POST', 'http://njain071.imad.hasura-app.io/create-comment' + article_name, true);
+        request.send(null);
+    };
 }
 
 function check_login () {
