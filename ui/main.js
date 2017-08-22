@@ -91,12 +91,13 @@ function login_form() {
         request.onreadystatechange = function () {
             if(request.readyState === XMLHttpRequest.DONE) {
                 if(request.status === 200) {
-                    alert(this.response);
+                    alert(this.responseText);
                     alert('User created successfully');
                     register_btn.value = 'Registered!';
                 } 
                 else {
-                    alert('Could not register the user');
+                    // alert('Could not register the user');
+                    alert(this.responseText);
                     register_btn.value = 'Register';
                 }
             }
