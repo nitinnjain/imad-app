@@ -1,5 +1,5 @@
 var article_name = window.location.pathname.split('/')[1];
-alert(article_name)
+alert(article_name);
 //firstly check if the user is logged in or not
 check_login();
 
