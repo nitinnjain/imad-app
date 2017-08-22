@@ -23,7 +23,7 @@ function load_comments() {
                 var commentData = JSON.parse(this.responseText);
                 for(var i = 0; i < commentData.length; i++) {
                     content += `
-                            <p>${escapeHTML(commentData[i].comment)} - By ${comentData[i].usename}</p>
+                            <p>${escapeHTML(commentData[i].comment)} - By ${commentData[i].usename}</p>
                 `;
                 }
                 comments.innerHTML = content;
