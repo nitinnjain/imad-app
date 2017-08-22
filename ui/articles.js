@@ -5,6 +5,13 @@ check_login();
 //load all the comments on the article even if the user is not logged in
 load_comments();
 
+function escapeHTML (text) {
+    var $text = document.createnodeText(text);
+    var $div = document.createElement('div');
+    $div.appendChild($text);
+    return $div.innerHTML;
+}
+
 //function to load all the comments
 function load_comments() {
     var request = new XMLHttpRequest();
@@ -12,7 +19,13 @@ function load_comments() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 //load the comments
-                console.log(JSON.parse(this.responseText));
+                var content = '';
+                var commentData = JSON.parse(this.responseText);
+                for(var i = 0; i < commentData.length; i++) {
+                    coment += `
+                            <p>${escapeHTML(commentData[i].comment)} - By ${comentData[i].usename}</p>
+                `;
+                }
             }
             else {
                 comments.innerHTML = 'Sorry, could not load the comments...';
