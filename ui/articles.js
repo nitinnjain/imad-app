@@ -39,7 +39,7 @@ function load_comments_box () {
         // request.setRequestHeader('Content-Type', 'application/json');
         // request.send(JSON.stringify({comment: comment}));
         
-        request.open('GET', 'http://njain071.imad.hasura-app.io/submit-comment/' + arctile_name, true);
+        request.open('GET', 'http://njain071.imad.hasura-app.io/submit-comment/' + article_name, true);
         request.send(null);
     };
 }
