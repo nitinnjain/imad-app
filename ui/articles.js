@@ -35,12 +35,9 @@ function load_comments_box () {
         
         var comment = document.getElementById('comments_area').value;
         
-        // request.open('POST', 'http://njain071.imad.hasura-app.io/submit-comment/' + article_name, true);
-        // request.setRequestHeader('Content-Type', 'application/json');
-        // request.send(JSON.stringify({comment: comment}));
-        
-        request.open('GET', 'http://njain071.imad.hasura-app.io/submit-comment/' + article_name, true);
-        request.send(null);
+        request.open('POST', 'http://njain071.imad.hasura-app.io/submit-comment/' + article_name, true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({comment: comment}));
     };
 }
 
