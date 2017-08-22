@@ -69,7 +69,7 @@ function login_form() {
                 alert('Something went wrong on the server');
                 login.value = 'Login';
             }
-            // check_login();
+            check_login();
             }
         };
         
