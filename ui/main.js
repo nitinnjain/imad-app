@@ -32,6 +32,7 @@ function login_form() {
         request.onreadystatechange = function () {
             if(request.readyState === XMLHttpRequest.DONE) {
                 if (request.status === 200) {
+                    alert('User logged in successfully...');
                 login.value = 'Sucess!';
             } else if (request.status === 403) {
                 alert('Invalid credentials. Try again?');
