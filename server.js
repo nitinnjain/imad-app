@@ -135,7 +135,7 @@ app.get('/check-login', function(req, res) {
             else {
                 res.send(result.rows[0].username);
             }
-        })
+        });
     }
     else {
         res.status(400).send('You are not logged in');
@@ -178,6 +178,10 @@ app.post('/submit-comment/:articleName', function (req, res) {
     }
 });
 
+app.get('/get-comments', function(req, res) {
+   //endpoint to get all the comments 
+});
+
 app.get('/get-articles', function (req, res) {
     pool.query('SELECT * FROM article ORDER BY date DESC', function (err, result) {
         if(err) {
@@ -187,30 +191,6 @@ app.get('/get-articles', function (req, res) {
             res.send(JSON.stringify(result.rows));
         }
     });
-});
-
-app.get('/test-db', function (req, res) {
-    pool.query('SELECT * FROM test', function (err, result) {
-        if(err) {
-            res.status(500).send(err.toString());
-        }
-        else {
-            res.send(JSON.stringify(result.rows));
-        }
-    });
-});
-
-var counter = 0;
-app.get('/counter', function (req, res) {
-    counter = counter +1;
-    res.send(counter.toString());
-});
-
-var names = [];
-app.get('/submit-name', function (req, res) {
-    var name = req.query.name;
-    names.push(name);
-    res.send(JSON.stringify(names));    
 });
 
 app.get('/articles/:articleName', function (req, res) { // this is the feature of express framework
@@ -231,7 +211,6 @@ app.get('/articles/:articleName', function (req, res) { // this is the feature o
         }
     });
 });
-
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
