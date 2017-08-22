@@ -24,7 +24,7 @@ function load_comments() {
                 for(var i = 0; i < commentData.length; i++) {
                     content += `
                             <p>${escapeHTML(commentData[i].comment)}</p>
-                            <pre><p>- By ${escapeHTML(commentData[i].username)}</p></pre>
+                            <p>- By ${escapeHTML(commentData[i].username)}</p>
                 `;
                 }
                 comments.innerHTML = content;
