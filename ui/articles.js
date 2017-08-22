@@ -21,6 +21,7 @@ check_login() {
     request.onreadystatechange = function () {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
+                alert('logged in');
                 load_comments_box();
             }
         }
