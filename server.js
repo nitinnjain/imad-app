@@ -147,7 +147,7 @@ app.get('/logout', function(req, res) {
     res.send('Logged out');
 });
 
-app.get('/submit-comment/:articleName', function (req, res) {
+app.post('/submit-comment/:articleName', function (req, res) {
     var articleName = req.params.articleName;
     if(req.session && req.session.auth && req.session.auth.userId) {
         pool.query("SELECT * FROM article WHERE title = $1", [articleName], function (err, result) {
