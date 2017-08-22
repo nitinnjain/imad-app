@@ -148,8 +148,9 @@ app.get('/logout', function(req, res) {
 });
 
 app.get('/submit-comment/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
     if(req.session && req.session.auth && req.session.auth.userId) {
-        pool.query('SELECT * FROM "user" WHERE title = $1', [req.params.articleName], function (err, result) {
+        pool.query('SELECT * FROM "user" WHERE title = $1', [articleName], function (err, result) {
             if(err) {
                 res.status(500).send(err.toString());
             }
