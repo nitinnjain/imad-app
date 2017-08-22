@@ -61,6 +61,7 @@ function login_form() {
                 if (request.status === 200) {
                 login.value = 'Sucess!';
             } else if (request.status === 403) {
+                alert('Invalid credentials. Try again?');
                 login.value = 'Invalid credentials. Try again?';
             } else if (request.status === 500) {
                 alert('Something went wrong on the server');
