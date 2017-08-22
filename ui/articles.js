@@ -8,7 +8,7 @@ load_comments();
 //function to load all the comments
 function load_comments() {
     var comments_load_area = document.getElementById('comments');
-    comments_load_area.innerHTML = `Nitin Jain`;
+    // comments_load_area.innerHTML = ;
 }
 
 //if the user is loggedd in then show the dialog box to add a coment
