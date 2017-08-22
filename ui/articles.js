@@ -15,7 +15,7 @@ function load_comments_box () {
     comments_box.innerHTML = add_comments;
 }
 
-check_login() {
+function check_login() {
     var request =  new XMLHttpRequest();
     
     request.onreadystatechange = function () {
