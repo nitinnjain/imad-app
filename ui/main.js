@@ -90,7 +90,6 @@ function login_form() {
         
         request.onreadystatechange = function () {
             if(request.readyState === XMLHttpRequest.DONE) {
-                alert('registering working here before 200');
                 if(request.status === 200) {
                     alert(this.response);
                     alert('User created successfully');
