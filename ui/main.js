@@ -48,8 +48,8 @@ function login_form() {
         <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
-        // <input type="submit" id="register_btn" value="Register" />
         `;
+        // <input type="submit" id="register_btn" value="Register" />
     login_area.innerHTML = loginHtml;
     
     var login = document.getElementById('login_btn');
