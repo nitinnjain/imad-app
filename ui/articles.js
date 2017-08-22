@@ -9,7 +9,7 @@ function load_comments_box () {
     var add_comments = `
                         <h3>Add a Comment</h3>
                         <textarea id="comments_area" placeholder="Type a comment..." rows="5" cols="100"></textarea>
-                        <hr/>
+                        <br/>
                         <input type="submit" value="Submit" id="submit_comment_btn" />
                         <hr/>
     `;
