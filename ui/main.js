@@ -8,8 +8,12 @@ function load_user_details(username) {
     var login_area = document.getElementById('login_area');
     login_area.innerHTML = `
                             <h3>Hi ${username}</h3>
-                            <a href="/logout">Logout</a>
+                            <a id="logout_btn" href="">Logout</a>
     `;
+    var logout_btn = document.getElementById('logout_btn');
+    logout_btn.onclick = function () {
+        alert('logged out');
+    };
 }
 
 //function to provide the user with a login page to either login or register
