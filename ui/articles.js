@@ -44,7 +44,7 @@ function load_comments_box () {
     var comments_box = document.getElementById('comments_box');
     var add_comments = `
                         <h3>Add a Comment</h3>
-                        <textarea id="comments_area" placeholder="Type a comment..." rows="5" cols="80"></textarea>
+                        <textarea id="comments_area" placeholder="Type a comment..." rows="5" cols="70"></textarea>
                         <br /><br />
                         <input type="submit" value="Submit" id="submit_comment_btn" />
                         <hr/>
