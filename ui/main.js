@@ -12,7 +12,21 @@ function load_user_details(username) {
     `;
     var logout_btn = document.getElementById('logout_btn');
     logout_btn.onclick = function () {
-        alert('logged out');
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if(request.readyState == XMLHttpResponse.DONE) {
+                if(request.status == 200) {
+                    alert('Logged out successfully');
+                    check_login();
+                }
+                else {
+                    alert('There is an error');
+                }
+            }
+        };
+        
+        request.open('GET', 'http://njain071.imad.hasura-app.io/logout', true);
+        request.send(null);
     };
 }
 
