@@ -14,7 +14,7 @@ function load_user_details(username) {
     logout_btn.onclick = function () {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
-            if(request.readyState == XMLHttpResponse.DONE) {
+            if(request.readyState == XMLHttpRequest.DONE) {
                 if(request.status == 200) {
                     alert('Logged out successfully');
                     check_login();
