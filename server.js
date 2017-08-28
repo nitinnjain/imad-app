@@ -116,7 +116,7 @@ app.post('/login', function (req, res) {
                     //set the session
                     req.session.auth = {userId: result.rows[0].id};
                     
-                    res.send('Credentials are correct!');
+                    res.status(200).send('Credentials are correct!');
                 }
                 else {
                     res.status(403).send('username/password is invalid');
@@ -133,7 +133,7 @@ app.get('/check-login', function(req, res) {
                 res.status(500).send('err.toString()');
             }
             else {
-                res.send(result.rows[0].username);
+                res.status(200).send("User " + result.rows[0].username + " logged in");
             }
         });
     }
